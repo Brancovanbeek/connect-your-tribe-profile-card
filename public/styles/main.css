@@ -1,0 +1,111 @@
+body {
+    font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+    background-color: #ffffff;
+    margin: 0;
+    padding: 0;
+    display: flex; /* Display: flex; Als je deze property gebruikt maak van flexbox. Hiermee kun je de uitlijning en positie van elementen in die flexbox              verdelen op de pagina. Dit maakt de het element ook responsive https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_flexible_box_layout/Basic_concepts_of_flexbox */
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    position: relative;
+  }
+  
+  article {
+    overflow: hidden;
+    max-width: 700px;
+    width: 100%;
+    box-shadow: 0px 0px 15px 4px rgb(61, 61, 62);
+  }
+  
+  .mugshot {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+  }
+  
+  .mugshot img {
+    height: 390px;
+    width: 290px;
+    filter: grayscale(100%);
+  }
+  
+  .mugshot img:hover {
+    filter: none;
+  }
+  
+  #info {
+    background-image: linear-gradient(-40deg, #000000, rgb(135, 135, 135));
+    color: #ffffff;
+    height: 350px;
+    width: 400px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column; /* Hiermee kun je de richting bepalen van de elementen in de flexbox.
+                               dit kan horizontaal of verticaal zijn */
+    justify-content: center;
+  }
+  
+  #info h1 {
+    margin: 0;
+    font-size: 2em;
+  }
+  
+  #info h2 {
+    /* margin-top: 10px; */
+    font-size: 1.5em;
+    font-weight: lighter;
+  }
+  
+  #info h3 {
+    font-size: 1.2em;
+    font-weight: lighter;
+  }
+  
+  #info ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  #info li {
+    font-size: 1em;
+  }
+  
+  #github {
+    height: 20px;
+    width: 20px;
+    margin-right: 10px;
+  }
+  
+  #github:hover {
+    transform: scale(1.5);
+  }
+  
+  #linkedin {
+    height: 20px;
+    width: 20px;
+  }
+  
+  #linkedin:hover {
+    transform: scale(1.5);
+  }
+  
+  .animatie {
+    animation-duration: 5s;
+    animation-name: animatie;
+  }
+  
+  @keyframes animatie {
+    from {
+      translate: 100vw;
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+  
+  
+
+  
+  

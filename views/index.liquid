@@ -1,14 +1,31 @@
 {% render 'partials/head.liquid' %}
 
-<article>
-  <header>
-    <h1>Hallo</h1>
-    <p>mijn naam is</p>
-  </header>
+<article class="animatie">
+    <header class="mugshot">
+      <img id="foto" src="IMG/IMG_5522.JPG" alt="Foto van mij" />
 
-  <p>{{ person.name }}</p>
+      <section id="info">
+        <h1>{{ person.name }}</h1>
+        <h2>Frontend designer en webdeveloper</h2>
+        <h3>Mijn sterke punten :</h3>
+        <ul>
+          <li>♤ Leergierig</li>
+          <li>♧ Zelfstandig</li>
+          <li>♡ Creatief denkend</li>
+        </ul>
 
-  <footer></footer>
-</article>
+        <section class="logos">
+          <a href="https://github.com/">
+            <img id="github" src="IMG/github-mark-white.png" alt="github-logo" />
+          </a>
+          <a href="https://linkedin.com/">
+            <img id="linkedin" src="IMG/linkedin.webp" alt="linkedin-logo" />
+          </a>
+        </section>
+      </section>
+    </header>
+  </article>
+
+  <script src="scripts/script.js"></script>
 
 {% render 'partials/foot.liquid' %}
