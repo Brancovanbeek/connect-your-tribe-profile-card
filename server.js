@@ -6,14 +6,19 @@ import express from 'express'
 import { Liquid } from 'liquidjs';
 
 
-// Vul hier jouw eigen ID in (zie de instructies in de leertaak)
+// Vul hier jouw eigen ID in (zie de console.log(personResponseJSON)instructies in de leertaak)
 const personID = 146
 
 // Doe een fetch naar een URL op de WHOIS API, ga pas verder als de fetch gelukt is
 const personResponse = await fetch('https://fdnd.directus.app/items/person/' + personID)
 
+
 // Lees van de response van die fetch het JSON object in, waar we iets mee kunnen doen
 const personResponseJSON = await personResponse.json()
+
+const personDataCustom = personResponseJSON.data 
+
+personDataCustom.custom = JSON.parse(personDataCustom.custom)
 
 // Controleer eventueel de data in je console
 // (Let op: dit is _niet_ de console van je browser, maar van NodeJS, in je terminal)
@@ -43,6 +48,18 @@ app.get('/', async function (request, response) {
    response.render('index.liquid', {person: personResponseJSON.data})
 })
 
+app.get('/', async function (request, response) {
+  response.render('index.liquid', {person: personDataCustom})
+})
+
+app.get('/oefenen', async function (request, response) {
+  response.render('oefenen.liquid', {person: personResponseJSON.data})
+})
+
+app.get('/oefenen', async function (request, response) {
+  response.render('oefenen.liquid', {person: personDataCustom})
+})
+
 // Had je meer pagina's in je oude visitekaartje? Zoals een contact.html?
 // Maak daar dan meer Routes voor aan, en koppel ze aan Views
 // app.get('/contact', function (request, response) {
@@ -58,6 +75,12 @@ app.post('/', async function (request, response) {
   response.redirect(303, '/')
 })
 
+app.post('/oefenen.liquid', async function (request, response) {
+  // Je zou hier data kunnen opslaan, of veranderen, of wat je maar wilt
+  // Er is nog geen afhandeling van een POST, dus stuur de bezoeker terug naar /
+  response.redirect(303, '/')
+})
+
 // Stel het poortnummer in waar Express op moet gaan luisteren
 // Lokaal is dit poort 8000, als dit ergens gehost wordt, is het waarschijnlijk poort 80
 app.set('port', process.env.PORT || 8000)
@@ -67,3 +90,6 @@ app.listen(app.get('port'), function () {
   // Toon een bericht in de console en geef het poortnummer door
   console.log(`Application started on http://localhost:${app.get('port')}`)
 })
+
+
+
