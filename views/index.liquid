@@ -1,85 +1,100 @@
 {% render 'partials/head.liquid' %}
 
-  <header class="mugshot">
-    <img id="foto" src="assets/IMG_5522.JPG" alt="Foto van Branco van Beek">
-    <section id="info">
-      <h1>{{ person.name }}</h1>
-      <h2>{{ person.bio }}</h2>
-      <h3>Info:</h3>
-      <ul>
-        <li>Birthdate: <span>{{ person.birthdate | date: "%d %B %Y" }}</span></li>
-        <li>Hometown: <span>{{ person.custom.hometown }}</span></li>
-        <li>Email: <span>{{ person.custom.email }}</span></li>
-      </ul>
 
-      <div class="logos">
-        <a href="https://github.com/">
-          <img id="github" src="assets/github-mark-white.png" alt="github-logo">
-        </a>
-        <a href="https://linkedin.com/">
-          <img id="linkedin" src="assets/linkedin.webp" alt="linkedin-logo">
-        </a>
-        <a href="">
-          <img id="instagram" src="assets/instagram-white-icon.webp" alt="instagram-logo">
-        </a>
-      </div>
-    </section>  
-  </header>
-  
-  <footer id="info-back">
-    <div class="hva-logo">
-      <img src="assets/logo.png" alt="hva logo">
-    </div>
-  
-    <div class="qr-code">
-      <img src="assets/adobe-express-qr-code-2.png" alt="qr code iloveweb">
-    </div>
-  
-    <hr class="stripe">
 
-    <section class="goals-container">
-      <h2>Goals</h2>
-      <ul class="goals-list">
-        <li>
-          ♢ {{ person.custom.goal-1 }}
-        </li>
-        <li>
-          ♢ {{ person.custom.goal-2}}
-        </li>
-        <li>
-          ♢ {{ person.custom.goal-3 }}
-        </li>
-        <li>
-          ♢ {{ person.custom.goal-4 }}
-        </li>
-      </ul>
+
+<section class="flip-card-container">
+  <section class="flip-card">
+    <!-- Front of the card (Header content) -->
+    <section class="flip-card-front">
+      <header class="mugshot">
+        <img id="foto" src="assets/IMG_5522.JPG" alt="Foto van Branco van Beek">
+        <section id="info">
+          <h1>{{ person.name }}</h1>
+          <h2>{{ person.bio }}</h2>
+          <h3>Info:</h3>
+          <ul>
+            <li>Birthdate: <span>{{ person.birthdate | date: "%d %B %Y" }}</span></li>
+            <li>Hometown: <span>{{ person.custom.hometown }}</span></li>
+            <li>Email: <span>{{ person.custom.email }}</span></li>
+          </ul>
+
+          <div class="logos">
+            <a href="https://github.com/">
+              <img id="github" src="assets/github-mark-white.png" alt="github-logo">
+            </a>
+            <a href="https://linkedin.com/">
+              <img id="linkedin" src="assets/linkedin.webp" alt="linkedin-logo">
+            </a>
+            <a href="">
+              <img id="instagram" src="assets/instagram-white-icon.webp" alt="instagram-logo">
+            </a>
+          </div>
+        </section>  
+      </header>
     </section>
-    <section class="activities-container">
-      <h2>Activities</h2>
-      <ul class="activities-list">
-        <li>
-          ♢ {{ person.custom.activity-1 }}
-        </li>
-        <li>
-          ♢ {{ person.custom.activity-2 }}
-        </li>
-        <li>
-          ♢ {{ person.custom.activity-3 }}
-        </li>
-        <li>
-          ♢ {{ person.custom.activity-4 }}
-        </li>
-        <li>
-          ♢ {{ person.custom.activity-5 }}
-        </li>
-        <li>
-          ♢ {{ person.custom.activity-6 }}
-        </li>
-      </ul>
-    </section>  
-  </footer>
 
 
-<script src="scripts/script.js"></script>
+  
+    <section class="flip-card-back">
+      <footer id="info-back">
+        <div class="hva-logo">
+          <img src="assets/logo.png" alt="hva logo">
+        </div>
+      
+        <div class="qr-code">
+          <img src="assets/adobe-express-qr-code-2.png" alt="qr code iloveweb">
+        </div>
+      
+        <hr class="stripe">
+
+        <section class="goals-container">
+          <h2>Goals</h2>
+          <ul class="goals-list">
+            <li>
+              ♢ {{ person.custom.goal-1 }}
+            </li>
+            <li>
+              ♢ {{ person.custom.goal-2}}
+            </li>
+            <li>
+              ♢ {{ person.custom.goal-3 }}
+            </li>
+            <li>
+              ♢ {{ person.custom.goal-4 }}
+            </li>
+          </ul>
+        </section>
+        <section class="activities-container">
+          <h2>Activities</h2>
+          <ul class="activities-list">
+            <li>
+              ♢ {{ person.custom.activity-1 }}
+            </li>
+            <li>
+              ♢ {{ person.custom.activity-2 }}
+            </li>
+            <li>
+              ♢ {{ person.custom.activity-3 }}
+            </li>
+            <li>
+              ♢ {{ person.custom.activity-4 }}
+            </li>
+            <li>
+              ♢ {{ person.custom.activity-5 }}
+            </li>
+            <li>
+              ♢ {{ person.custom.activity-6 }}
+            </li>
+          </ul>
+        </section>  
+      </footer>
+    </section>
+  </section>
+</section>
+
+
+
+<script src="script.js"></script>
 
 {% render 'partials/foot.liquid' %}
