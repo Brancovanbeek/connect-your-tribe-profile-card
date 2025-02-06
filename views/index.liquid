@@ -1,31 +1,85 @@
 {% render 'partials/head.liquid' %}
 
-<article class="animatie">
-    <header class="mugshot">
-      <img id="foto" src="IMG/IMG_5522.JPG" alt="Foto van mij" />
+  <header class="mugshot">
+    <img id="foto" src="assets/IMG_5522.JPG" alt="Foto van Branco van Beek">
+    <section id="info">
+      <h1>{{ person.name }}</h1>
+      <h2>Frontend designer and webdeveloper</h2>
+      <h3>Info:</h3>
+      <ul>
+        <li>Birthdate: <span>{{ person.birthdate | date: "%d %B %Y" }}</span></li>
+        <li>Hometown: <span>{{ person.custom.hometown }}</span></li>
+        <li>Email: <span>{{ person.custom.email }}</span></li>
+      </ul>
 
-      <section id="info">
-        <h1>{{ person.name }}</h1>
-        <h2>Frontend designer en webdeveloper</h2>
-        <h3>Mijn sterke punten :</h3>
-        <ul>
-          <li>♤ Leergierig</li>
-          <li>♧ Zelfstandig</li>
-          <li>♡ Creatief denkend</li>
-        </ul>
+      <div class="logos">
+        <a href="https://github.com/">
+          <img id="github" src="assets/github-mark-white.png" alt="github-logo">
+        </a>
+        <a href="https://linkedin.com/">
+          <img id="linkedin" src="assets/linkedin.webp" alt="linkedin-logo">
+        </a>
+        <a href="">
+          <img id="instagram" src="assets/instagram-white-icon.webp" alt="instagram-logo">
+        </a>
+      </div>
+    </section>  
+  </header>
+  
+  <footer id="info-back">
+    <div class="hva-logo">
+      <img src="assets/logo.png" alt="hva logo">
+    </div>
+  
+    <div class="qr-code">
+      <img src="assets/adobe-express-qr-code-2.png" alt="qr code iloveweb">
+    </div>
+  
+    <hr class="stripe">
 
-        <section class="logos">
-          <a href="https://github.com/">
-            <img id="github" src="IMG/github-mark-white.png" alt="github-logo" />
-          </a>
-          <a href="https://linkedin.com/">
-            <img id="linkedin" src="IMG/linkedin.webp" alt="linkedin-logo" />
-          </a>
-        </section>
-      </section>
-    </header>
-  </article>
+    <section class="goals-container">
+      <h2>Goals</h2>
+      <ul class="goals-list">
+        <li>
+          ♢ House in Spain
+        </li>
+        <li>
+          ♢ Financially independent
+        </li>
+        <li>
+          ♢ Dream physique
+        </li>
+        <li>
+          ♢ Travel a lot
+        </li>
+      </ul>
+    </section>
+    <section class="activities-container">
+      <h2>Activities</h2>
+      <ul class="activities-list">
+        <li>
+          ♢ Frontend Design & Development
+        </li>
+        <li>
+          ♢ FL Studio
+        </li>
+        <li>
+          ♢ Piano
+        </li>
+        <li>
+          ♢ Gym
+        </li>
+        <li>
+          ♢ Reading books
+        </li>
+        <li>
+          ♢ Watching films
+        </li>
+      </ul>
+    </section>  
+  </footer>
 
-  <script src="scripts/script.js"></script>
+
+<script src="scripts/script.js"></script>
 
 {% render 'partials/foot.liquid' %}
