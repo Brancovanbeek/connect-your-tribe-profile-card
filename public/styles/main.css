@@ -85,7 +85,7 @@ header, footer {
 #info li {
   font-size: 1em;
 }
-  
+   
 .logos{
   margin-top: 50px;
   display: flex;
@@ -93,7 +93,7 @@ header, footer {
   justify-content: space-between;
   gap: 1em;
 }
-
+ 
 #github {
   height: 30px;
   width: 30px;
@@ -115,6 +115,7 @@ header, footer {
 #linkedin {
   height: 30px;
   width: 30px;
+  border-radius: 10px;
 }
   
 #linkedin:hover {
@@ -212,11 +213,10 @@ footer{
   display: flex;
   align-items: center;
   margin-bottom: 20px;
-  margin-left: 10px;
 }
 
 
-/* draaien */
+/* draaien animatie*/
 .flip-card {
   width: 100%;
   height: 100%;

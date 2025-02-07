@@ -5,4 +5,4 @@ const flipCard = document.querySelector('.flip-card');
 flipCard.addEventListener('click', function() {
   // Toggle de 'flipped' class
   flipCard.classList.toggle('flipped');
-});
+}); 
