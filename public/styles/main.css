@@ -1,155 +1,131 @@
-*{
+/* Algemene reset */
+* {
   padding: 0;
   margin: 0;
 }
 
+/* Body-stijlen */
 body {
   font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
   background-color: #ffffff;
-  display: flex; 
+  display: flex;
   justify-content: center;
   align-items: center;
   height: 100vh;
-  position: relative;
   letter-spacing: 0.1em;
 }
-  
+
+/* Header en Footer */
 header, footer {
   box-shadow: 0px 0px 15px 4px rgb(61, 61, 62);
 }
-  
+
+/* Mugshot */
 .mugshot {
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
   align-items: center;
 }
-  
+
 .mugshot img {
   height: 390px;
   width: 275px;
   filter: grayscale(100%);
 }
-  
+
 .mugshot img:hover {
   filter: none;
 }
-  
+
+/* Info sectie */
 #info {
   background-image: linear-gradient(-40deg, #000000, rgb(135, 135, 135));
   color: #ffffff;
   height: 350px;
   width: 400px;
   padding: 20px;
+
+  ul {
+    gap: 1em;
+    list-style-type: none;
+    padding: 0;
+  }
+
+  li {
+    margin-top: 0.5em;
+    font-size: 1em;
+  }
+
+  h1 {
+    margin: 0;
+    font-size: 2.5em;
+  }
+
+  h2 {
+    font-size: 1.8em;
+    font-weight: lighter;
+  }
+
+  h3 {
+    margin-top: 50px;
+    font-size: 1.5em;
+    font-weight: bold;
+  }
 }
 
-#info ul{
-  gap: 1em;
+/* Info-back sectie */
+#info-back {
+  background-image: linear-gradient(-40deg, #000000, rgb(135, 135, 135));
+  color: #ffffff;
+  height: 350px;
+  width: 675px;
+  padding: 20px;
+
+  h2 {
+    font-weight: bold;
+    font-size: 1.5em;
+  }
+
+  li {
+    list-style: none;
+    font-size: 1em;
+  }
 }
 
-#info li{
-  margin-top: 0.5em;
-}
-  
-#info h1 {
-  margin: 0;
-  font-size: 2.5em;
-}
-  
-#info h2 {
-  font-size: 1.8em;
-  font-weight: lighter;
-}
-  
-#info-back h2{
-  font-weight: bold;
-  font-size: 1.5em;
-}
-
-#info-back li{
-  list-style: none;
-  font-size: 1em;
-}
-
-#info h3 {
-  margin-top: 50px;
-  font-size: 1.5em;
-  font-weight: bold;
-}
-  
-#info ul {
-  list-style-type: none;
-  padding: 0;
-}
-  
-#info li {
-  font-size: 1em;
-}
-   
-.logos{
+/* Logos */
+.logos {
   margin-top: 50px;
   display: flex;
   width: 80px;
   justify-content: space-between;
   gap: 1em;
 }
- 
-#github {
+
+#github, #instagram, #linkedin {
   height: 30px;
   width: 30px;
 }
 
-#instagram{
-  height: 30px;
-  width: 30px;
+#instagram:hover, #github:hover, #linkedin:hover {
+  transform: scale(1.5);
 }
 
-#instagram:hover{
-  transform: scale(1.5);
-}
-  
-#github:hover {
-  transform: scale(1.5);
-}
-  
 #linkedin {
-  height: 30px;
-  width: 30px;
   border-radius: 10px;
 }
-  
-#linkedin:hover {
-  transform: scale(1.5);
-}
-  
+
 .animatie {
   animation-duration: 5s;
   animation-name: animatie;
 }
 
-li span{
+li span {
   font-weight: bold;
 }
 
-/* achterkant */
-#info-back{
-  background-image: linear-gradient(-40deg, #000000, rgb(135, 135, 135));
-  color: #ffffff;
-  height: 350px;
-  width: 675px;
-  padding: 20px;
-}
-
-.goals-list, .activities-list{
-  padding: 0;
-  margin-top: 1em;
-}
-
-.activities-container, .goals-container{
-  margin-top: 1em;
-}
-
-.stripe{
+/* Stripe */
+.stripe {
   width: 600px;
   height: 1px;
   background-color: white;
@@ -158,95 +134,105 @@ li span{
   flex-direction: column;
 }
 
-#info-back{
+/* Activiteiten en doelen */
+.goals-list, .activities-list {
+  padding: 0;
+  margin-top: 1em;
+}
+
+.activities-container, .goals-container {
+  margin-top: 1em;
+}
+
+.activities-container {
+  grid-column: 1/2;
+  grid-row: 2/3;
+}
+
+.goals-container {
+  grid-column: 2/3;
+  grid-row: 2/3;
+  margin-left: 5em;
+}
+
+/* Grid-instellingen info-back */
+#info-back {
   display: grid;
   grid-template-rows: 140px;
   grid-template-columns: 300px 300px;
 }
 
-.activities-container{
+.stripe {
   grid-column: 1/2;
   grid-row: 2/3;
 }
 
-.goals-container{
- grid-column: 2/3;
- grid-row: 2/3;
- margin-left: 5em;
-}
-
-.stripe{
-  grid-column: 1/2;
-  grid-row: 2/3;
-}
-
-footer{
+/* Footer */
+footer {
   display: flex;
   justify-content: center;
 }
 
-.qr-code{
+/* QR-code */
+.qr-code {
   grid-column: 2/3;
   grid-row: 1/2;
   display: flex;
   justify-content: flex-end;
 }
 
-.qr-code img:hover{
-  transform: scale(1.1);
-}
-
-.qr-code img{
+.qr-code img {
   height: 110px;
   width: 110px;
   border-radius: 5px;
 }
 
-.hva-logo img{
+.qr-code img:hover {
+  transform: scale(1.1);
+}
+
+/* Hva-logo */
+.hva-logo img {
   height: 50px;
   width: 220px;
   grid-column: 1/2;
   grid-row: 1/2;
 }
 
-.hva-logo{
+.hva-logo {
   display: flex;
   align-items: center;
   margin-bottom: 20px;
 }
 
-
-/* draaien animatie*/
+/* Draaien animatie */
 .flip-card {
   width: 100%;
   height: 100%;
   position: relative;
-  transform-style: preserve-3d; 
-  transition: transform 0.5s; 
+  transform-style: preserve-3d;
+  transition: transform 0.5s;
 }
 
-.flip-card-front {
+.flip-card-front, .flip-card-back {
   position: absolute;
   width: 100%;
   height: 100%;
-  backface-visibility: hidden; 
+  backface-visibility: hidden;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
 .flip-card-back {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  backface-visibility: hidden;
-  transform: rotateY(180deg); 
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  transform: rotateY(180deg);
   flex-direction: column;
 }
 
 .flip-card.flipped {
   transform: rotateY(180deg);
+}
+
+.flip-card-container {
+  cursor: pointer;
 }
